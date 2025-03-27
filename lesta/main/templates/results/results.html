@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Слово</th>
+                <th>TF</th>
+                <th>IDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word in results %}
+            <tr>
+                <td>{{ word.word }}</td>
+                <td>{{ word.tf }}</td>
+                <td>{{ word.idf|floatformat:4 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
